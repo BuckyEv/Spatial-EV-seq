@@ -1,8 +1,10 @@
 # Spatial-EV-seq
 
-Spatial-EV-seq provides a computational toolkit for matching **in situ sequencing / fluorescence signal maps** with **spatial transcriptomics** measurements from adjacent tissue sections, and for performing downstream spatial EV-associated analyses. The central task addressed by this repository is spatial co-registration: decoded in situ signals, EV/protein fluorescence signals, H&E images, DAPI images, spot coordinates, and transcriptomic profiles are brought into a shared coordinate system so that spatial molecular patterns can be compared at tissue, spot, and cell-neighborhood levels.
+Extracellular vesicles (EVs) have emerged as promising biomarkers for monitoring both physiological homeostasis and pathological progression. However, current analytic methods face limitations in preserving spatial information about EVs and their intricate connections to parental and recipient cells. Here, we present Spatial-EV-seq, a method for in situ spatial profiling of EVs within their native microenvironmental context. Spatial-EV-seq uses an antibody-engineered capture interface to preserve EVs’ spatial distribution, followed by rolling circle amplification with EV surface–binding aptamers for fluorescence imaging of individual EVs. The method integrates ultra-sensitive EV profiling, molecular subtyping, and high-resolution spatial mapping with transcriptomics to resolve location-specific EV-cell communication networks. In an anti-PD-1 treated breast cancer mouse model, we uncover a spatially orchestrated immunosuppressive axis: PD-L1+ EV-enriched zones drive CD8+ T cell dysfunction, establishing immune-privileged niches, whereas PD-L1+ EV-depleted regions preserve immunocompetence and therapeutic sensitivity. Spatial-EV-seq offers insights into EV-mediated mechanisms and unlocks avenues for precision diagnostics and therapeutics.
 
-(Manuscript note: the abstract supplied for preparing this repository describes **scBiopsy-seq** rather than Spatial-EV-seq. Before public release, please confirm whether the final manuscript abstract should replace this paragraph, or whether the repository should only describe the Spatial-EV-seq computational modules.)
+# This work
+
+Spatial-EV-seq provides a computational toolkit for matching **in situ sequencing / fluorescence signal maps** with **spatial transcriptomics** measurements from adjacent tissue sections, and for performing downstream spatial EV-associated analyses. The central task addressed by this repository is spatial co-registration: decoded in situ signals, EV/protein fluorescence signals, H&E images, DAPI images, spot coordinates, and transcriptomic profiles are brought into a shared coordinate system so that spatial molecular patterns can be compared at tissue, spot, and cell-neighborhood levels.
 
 ## Overview
 
@@ -65,6 +67,7 @@ BiocManager::install("DESeq2")
 ```
 
 (DynamicISS is not bundled in this repository. Install DynamicISS separately and update the local path in `SpatialEV_DynamicISS_IRIS_v1.0.sh`.)
+(https://github.com/DynamicBiosystems/DynamicISS)
 
 ## Input data
 
@@ -77,8 +80,6 @@ The typical input data include:
 - DynamicISS decoded output, such as `Basecalling.csv` or a compatible table containing decoded feature identity and spatial coordinates.
 - Optional cell-type annotation or deconvolution table, for example `*_celltype_abundance.csv`.
 - Optional EV/gene signal tables generated after matching, such as `*_bas_cell_barcode.csv` or `gene_expression_extremes.csv`.
-
-(Please add a small public demo dataset or a minimal mock dataset before release if the repository is expected to be directly testable by external users.)
 
 ## Core modules
 
@@ -200,7 +201,7 @@ Before running, edit:
 - `root_dir`: project directory containing the spatial transcriptomics inputs and `gene_expression_extremes.csv`.
 - `select_script`: path to `select_10x_h5.py`.
 
-(Input note: `select_10x_h5.py` was referenced by the automation script but was not included in the uploaded code package. Please add it to the repository or document where users should obtain it.)
+(The main purpose of select_10x_h5.py is to filter the corresponding h5 file data based on the analysis requirements.)
 
 ### 6. Gene-EV significance and co-visualization analysis
 
@@ -235,8 +236,6 @@ The script currently contains a local example path in the `__main__` block. Edit
 python scripts/SpatialEV_tif_lossless_compression_v1.0.py
 ```
 
-(Optional improvement: expose this utility through `argparse`, for example `--input`, `--output`, `--compat-mode`, and `--compression`.)
-
 ## Recommended analysis logic
 
 Spatial-EV-seq analyses generally follow the logic below:
@@ -264,7 +263,6 @@ When interpreting results, inspect registration overlays carefully. Adjacent-sec
 
 ## Citation
 
-(Please add the final Spatial-EV-seq manuscript citation, DOI, and preferred repository citation after publication.)
 
 If you use DynamicISS-based decoding, also cite or acknowledge DynamicBiosystems/DynamicISS according to its license and documentation.
 
@@ -274,4 +272,3 @@ Copyright (c) 2026 BuckyEv. All rights reserved.
 
 Contact: james.bayern@icloud.com
 
-(Please add the final open-source license file, for example MIT/BSD-3-Clause/GPL-3.0, before public release if external reuse is intended.)
