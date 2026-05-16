@@ -38,7 +38,7 @@ Spatial-EV-seq/
 Clone the repository and enter the project directory:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/BuckyEv/Spatial-EV-seq.git
 cd Spatial-EV-seq
 ```
 
