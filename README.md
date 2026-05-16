@@ -266,6 +266,8 @@ When interpreting results, inspect registration overlays carefully. Adjacent-sec
 
 If you use DynamicISS-based decoding, also cite or acknowledge DynamicBiosystems/DynamicISS according to its license and documentation.
 
+If you use stLearn-based cell-cell interaction analysis, also cite or acknowledge BiomedicalMachineLearning/stLearn according to its license and documentation.
+
 ## License
 
 Copyright (c) 2026 BuckyEv. All rights reserved.
