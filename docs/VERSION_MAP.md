@@ -9,12 +9,3 @@
 | `full_automation_v2.0.sh` | `scripts/SpatialEV_CCI_batch_automation_v2.0.sh` | v2.0 |
 | `spatial_gene_v55_significance.R` | `scripts/SpatialEV_gene_EV_significance_v5.5.R` | v5.5 |
 | `compress_tif_lossless.py` | `scripts/SpatialEV_tif_lossless_compression_v1.0.py` | v1.0 |
-
-## Low-intrusion code adjustments
-
-- Added release metadata/copyright headers to code files and to Python sources inside the `.pyz` archives.
-- Standardized release file names so that every script name contains a `vX.X` version identifier.
-- Updated `SpatialEV_CCI_batch_automation_v2.0.sh` to call the renamed `SpatialEV_stLearn_CCI_v4.0.py` from the same `scripts/` directory.
-- Added `--n_pairs` and `--n_perms` arguments to `SpatialEV_stLearn_CCI_v4.0.py`, because these parameters were already used by the batch automation script.
-
-(No algorithmic blocks were rewritten.)
